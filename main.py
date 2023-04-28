@@ -1,7 +1,9 @@
 def hello():
-   print("hi")
-    
+    print("hi")
+
+
 def by():
-  print("buy")
-  
+    print("buy")
+
+
 print(hello())
