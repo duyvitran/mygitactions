@@ -5,7 +5,7 @@
 <title>ColdFusion QR Code Examples</title>
 </head>
 <body>
-<cfparam name="form.url" default="http://cflove.org">
+<cfpara name="form.url" default="http://cflove.org">
 
 <div style="padding:10px">
 <form action="" method="post">
@@ -16,7 +16,7 @@
 </form>
 </div>
 
-<cfset paths 			= arrayNew(1)>
+<cfse paths 			= arrayNew(1)>
 <cfset paths[1] 		= expandPath("zxing_qr.jar")>
 <cfset loader 			= createObject("component", "javaloader.JavaLoader").init(paths)>
 
