@@ -1,0 +1,24 @@
+name: Sync staging branch
+on:
+  pull_request_review:
+    types: submitted
+    branches:
+      - 'development'
+      
+  permissions: write-all
+
+  jobs:
+    approved:
+      if: github.event.review.state == 'approved'
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "This PR was approved"
+        - uses: actions/checkout@master
+
+        - name: Merge development -> staging
+          uses: devmasx/merge-branch@master
+          with:
+            type: now
+            from_branch: development
+            target_branch: staging
+            github_token: ${{ secrets.GITHUB_TOKEN }}
